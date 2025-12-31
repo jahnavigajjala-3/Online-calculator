@@ -58,6 +58,10 @@
     const result = document.getElementById('result');
     convertEmToPx.addEventListener('click', function() {
         const emValue = parseFloat(emInput.value);
+        if (isNaN(emValue)) {
+            result.textContent = 'Please enter a valid number.';
+            return;
+        }
         const pxValue = emValue * 16; 
         result.textContent = `${emValue} EM is equal to ${pxValue} PX`;
     });

@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EM to Px</title>
+    <title>EM to PX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgb(63, 63, 100);
+        }
+        h1 {
+            color: #efebeb;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            background-color: rgb(255, 254, 253);
+            color: black;
+            border-radius: 5px;
+        }
+        input::placeholder {
+            color: rgb(189, 145, 145);
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: rgb(2, 11, 18);
+             background-color: white;
+            display: inline-block;
+            border: 2px solid rgb(220, 209, 209);
+
+        }
+        #resultContainer {
+           
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body>
+<body> 
+    <div>
+    <h1>EM to PX Converter</h1>
+    <input id="emInput" type="number" placeholder="Enter value in EM" />
+    <button id="convertEmToPx">Convert to PX</button>
+    <br>
+   </div>
+    <p id="result"></p>
+   
+
+    
     
 </body>
+<script>
+    const emInput = document.getElementById('emInput');
+    const result = document.getElementById('result');
+    convertEmToPx.addEventListener('click', function() {
+        const emValue = parseFloat(emInput.value);
+        const pxValue = emValue * 16; 
+        result.textContent = `${emValue} EM is equal to ${pxValue} PX`;
+    });
+</script>
 </html>

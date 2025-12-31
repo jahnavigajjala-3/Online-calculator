@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REM to PX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgb(63, 63, 100);
+        }
+        h1 {
+            color: #efebeb;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            background-color: rgb(255, 254, 253);
+            color: black;
+            border-radius: 5px;
+        }
+        input::placeholder {
+            color: rgb(189, 145, 145);
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: rgb(2, 11, 18);
+            background-color: white;
+            display: inline-block;
+            border: 2px solid rgb(220, 209, 209);
+        }
+        #resultContainer {
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>REM to PX Converter</h1>
+        <input id="remInput" type="number" placeholder="Enter value in REM" />
+        <button id="convertRemToPx">Convert to PX</button>
+        <br>
+    </div>
+    <p id="result"></p>
+</body>
+<script>
+    const remInput = document.getElementById('remInput');
+    const result = document.getElementById('result');
+    convertRemToPx.addEventListener('click', function() {
+        const remValue = parseFloat(remInput.value);
+        if (isNaN(remValue)) {
+            result.textContent = 'Please enter a valid number.';
+            return;
+        }
+        const pxValue = remValue * 16; // Assuming the base font size is 16px
+        result.textContent = `${remValue} REM is equal to ${pxValue} PX`;
+    });
+</script>
+</html>

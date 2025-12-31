@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PX to EM</title> 
+
+    </head>
+    <body>
+        <h1>PX to EM Converter</h1>
+        <input id="pxInput" type="number" placeholder="Enter value in PX" />
+        <button id="convertPxToEm">Convert to EM</button>
+        <br>
+        <p id="result"></p>
+    </body>
+    <script>
+        const pxInput = document.getElementById('pxInput');
+        const result = document.getElementById('result');
+        convertPxToEm.addEventListener('click', function() {
+            const pxValue = parseFloat(pxInput.value);
+            if (isNaN(pxValue)) {
+                result.textContent = 'Please enter a valid number.';
+                return;
+            }
+            const emValue = pxValue / 16; 
+            result.textContent = `${pxValue} PX is equal to ${emValue} EM.`;
+        });
+    </script>
+
+</html>
